@@ -9,22 +9,9 @@ import '@stencil/core';
 
 import '@stencil/router';
 import '@stencil/state-tunnel';
-import {
-  MatchResults,
-} from '@stencil/router';
 
 
 export namespace Components {
-
-  interface AppHome {}
-  interface AppHomeAttributes extends StencilHTMLAttributes {}
-
-  interface AppProfile {
-    'match': MatchResults;
-  }
-  interface AppProfileAttributes extends StencilHTMLAttributes {
-    'match'?: MatchResults;
-  }
 
   interface AppRoot {}
   interface AppRootAttributes extends StencilHTMLAttributes {}
@@ -32,29 +19,13 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
-    'AppHome': Components.AppHome;
-    'AppProfile': Components.AppProfile;
     'AppRoot': Components.AppRoot;
   }
 
   interface StencilIntrinsicElements {
-    'app-home': Components.AppHomeAttributes;
-    'app-profile': Components.AppProfileAttributes;
     'app-root': Components.AppRootAttributes;
   }
 
-
-  interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
-  var HTMLAppHomeElement: {
-    prototype: HTMLAppHomeElement;
-    new (): HTMLAppHomeElement;
-  };
-
-  interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {}
-  var HTMLAppProfileElement: {
-    prototype: HTMLAppProfileElement;
-    new (): HTMLAppProfileElement;
-  };
 
   interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
   var HTMLAppRootElement: {
@@ -63,14 +34,10 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
-    'app-home': HTMLAppHomeElement
-    'app-profile': HTMLAppProfileElement
     'app-root': HTMLAppRootElement
   }
 
   interface ElementTagNameMap {
-    'app-home': HTMLAppHomeElement;
-    'app-profile': HTMLAppProfileElement;
     'app-root': HTMLAppRootElement;
   }
 

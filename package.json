@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "@stencil/core": "~0.16.2",
-    "@stencil/router": "~0.3.1"
+    "@stencil/router": "~0.3.1",
+    "moment": "^2.24.0"
   },
   "license": "MIT"
 }
