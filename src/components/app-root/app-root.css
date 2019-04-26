@@ -13,3 +13,19 @@ h1 {
   color: #fff;
   padding: 0 12px;
 }
+
+div.calender {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+}
+
+div.date-square {
+  border: 1px solid black;
+  height: 90px;
+  width: 90px;
+}
+
+div.date-square.selected {
+  background-color: dodgerblue;
+}
