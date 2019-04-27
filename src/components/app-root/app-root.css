@@ -1,5 +1,10 @@
+.calender{
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
 header {
-  background: #5851ff;
+  background: dodgerblue;
   color: white;
   height: 56px;
   display: flex;
@@ -21,11 +26,20 @@ div.calender {
 }
 
 div.date-square {
-  border: 1px solid black;
+  border: 1.5px solid black;
+  height: 90px;
+  width: 90px;
+}
+div.date-square:hover {
+  border: 1.5px dotted #5851ff;
   height: 90px;
   width: 90px;
 }
 
 div.date-square.selected {
   background-color: dodgerblue;
+}
+
+p.DoW{
+  text-decoration: underline;
 }

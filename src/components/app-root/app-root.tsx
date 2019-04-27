@@ -53,20 +53,26 @@ export class AppRoot {
     return (
       <div>
         <header>
-          <h1>Stencil App Starter</h1>
-        </header>
-
-        <main>
+          <h1>2019</h1>
           <select onChange={this.handleChange} value={this.month || this.months[this.now.getMonth()]}>
             {this.months.map(month => <option>{month}</option>)}
           </select>
+        </header>
+
+        <main>
+
           <div className="calender">
             {this.days.map(day => (
-              <div className={`date-square ${this.selectedDate.date === day.date ? 'selected': ''}`} key={day.date} onClick={() => this.handleClick(day)}>{`${day.day} ${day.date}`}</div>)}
+              <div
+              className={`date-square ${this.selectedDate.date === day.date ? 'selected': ''}`} onClick={() => this.handleClick(day)}>
+                <p className="DoW">{day.day}</p>
+                <p>{day.date}</p>
+              </div>
+            )}
           </div>
           {this.selectedDate.day &&
             <div>
-              Selected date: {this.selectedDate.date}/{this.selectedDate.month}/{this.selectedDate.year}
+              Selected date: {this.selectedDate.date} / {this.selectedDate.month} / {this.selectedDate.year}
             </div>
           }
         </main>
