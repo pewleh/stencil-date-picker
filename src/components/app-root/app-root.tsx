@@ -1,6 +1,12 @@
 import { Component, State } from '@stencil/core';
 import moment from 'moment';
 
+interface SelectedDate {
+  date?: string;
+  day?: string;
+  month?: string;
+  year?: string;
+}
 
 @Component({
   tag: 'app-root',
@@ -13,7 +19,7 @@ export class AppRoot {
   months = moment.months();
   @State() month: string = '';
   @State() days: any = [];
-  @State() selectedDate: object = {};
+  @State() selectedDate: SelectedDate = {};
 
   // building the days in the month for each selected month
   daysInMonth = month => {
@@ -54,8 +60,8 @@ export class AppRoot {
       <div>
         <header>
           <h1>2019</h1>
-          <select onChange={this.handleChange} value={this.month || this.months[this.now.getMonth()]}>
-            {this.months.map(month => <option>{month}</option>)}
+          <select onChange={this.handleChange}>
+            {this.months.map(month => <option value={this.month || this.months[this.now.getMonth()]}>{month}</option>)}
           </select>
         </header>
 
@@ -68,7 +74,7 @@ export class AppRoot {
                 <p className="DoW">{day.day}</p>
                 <p>{day.date}</p>
               </div>
-            )}
+            ))}
           </div>
           {this.selectedDate.day &&
             <div>
