@@ -67,11 +67,11 @@ export class AppRoot {
 
         <main>
 
-          <div className="calender">
+          <div class="calender">
             {this.days.map(day => (
               <div
-              className={`date-square ${this.selectedDate.date === day.date ? 'selected': ''}`} onClick={() => this.handleClick(day)}>
-                <p className="DoW">{day.day}</p>
+              class={`date-square ${this.selectedDate.date === day.date ? 'selected': ''}`} onClick={() => this.handleClick(day)}>
+                <p class="DoW">{day.day}</p>
                 <p>{day.date}</p>
               </div>
             ))}
